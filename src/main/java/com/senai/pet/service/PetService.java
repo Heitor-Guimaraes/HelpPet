@@ -1,6 +1,7 @@
 package com.senai.pet.service;
 
 import com.senai.pet.DTO.PetDTO;
+import com.senai.pet.Entity.Pet;
 import com.senai.pet.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,11 @@ public class PetService {
 
         this.petRepository = petRepository;
 
+    }
+
+    public String salvar(PetDTO petDTO){
+        Pet pet = new Pet(petDTO.getNome(),petDTO.getIdade(),petDTO.getPorte(), petDTO.getTipo(),petDTO.getRaca());
+        return "Salvo com sucesso";
     }
 
     public PetDTO mostrar(){

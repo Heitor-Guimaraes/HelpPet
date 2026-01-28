@@ -3,6 +3,8 @@ package com.senai.pet.Entity;
 import com.senai.pet.enums.Porte;
 import com.senai.pet.enums.TIpo;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Setter
@@ -22,4 +24,6 @@ public class Pet {
     private Porte porte;
     private TIpo tipo;
 
+    public Pet(@NotBlank String nome, @NotNull int idade, @NotBlank Porte porte, @NotBlank TIpo tipo, String raca) {
+    }
 }
