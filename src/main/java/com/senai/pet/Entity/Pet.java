@@ -24,6 +24,6 @@ public class Pet {
     private Porte porte;
     private TIpo tipo;
 
-    public Pet(@NotBlank String nome, @NotNull int idade, @NotBlank Porte porte, @NotBlank TIpo tipo, String raca) {
+    public Pet( String nome,  int idade,  Porte porte,  TIpo tipo, String raca) {
     }
 }

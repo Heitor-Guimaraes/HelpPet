@@ -23,8 +23,5 @@ public class PetService {
         return "Salvo com sucesso";
     }
 
-    public PetDTO mostrar(){
-        return
-    }
 
 }
