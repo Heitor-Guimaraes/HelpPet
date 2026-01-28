@@ -25,5 +25,10 @@ public class Pet {
     private TIpo tipo;
 
     public Pet( String nome,  int idade,  Porte porte,  TIpo tipo, String raca) {
+        this.nome = nome;
+        this.idade = idade;
+        this.porte = porte;
+        this.tipo = tipo;
+        this.raca = raca;
     }
 }

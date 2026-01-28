@@ -20,8 +20,14 @@ public class PetService {
 
     public String salvar(PetDTO petDTO){
         Pet pet = new Pet(petDTO.getNome(),petDTO.getIdade(),petDTO.getPorte(), petDTO.getTipo(),petDTO.getRaca());
+        petRepository.save(pet);
         return "Salvo com sucesso";
     }
+
+    public Pet buscarPorId(Long id){
+        return petRepository.findById(id).get();
+    }
+
 
 
 }

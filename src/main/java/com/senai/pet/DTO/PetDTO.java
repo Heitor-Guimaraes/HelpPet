@@ -22,9 +22,9 @@ public class PetDTO {
     @NotNull
     private int idade;
     private String raca;
-    @NotBlank
+
     private Porte porte;
-    @NotBlank
+
     private TIpo tipo;
 
     public PetDTO(Pet pet) {
@@ -34,6 +34,7 @@ public class PetDTO {
         this.porte = pet.getPorte();
         this.tipo = pet.getTipo();
     }
+
 
 
 }
