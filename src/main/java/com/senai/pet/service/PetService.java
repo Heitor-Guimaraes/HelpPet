@@ -29,8 +29,7 @@ public class PetService {
     }
 
     public Pet buscarPorId(Long id){
-        return petRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pet nao encontrado"));
+        return petRepository.findById(id).get();
     }
 
     public List<Pet> listarTodos(){
