@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("pet")
 public class PetController {
 
-    private PetService petService;
+    private final PetService petService;
 
     public PetController(PetService petService){
 
@@ -31,7 +31,20 @@ public class PetController {
         return ResponseEntity.ok(petService.buscarPorId(id));
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<?> findAllPets(){
+        return ResponseEntity.ok(petService.listarTodos());
+    }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updatePet(@PathVariable Long id, @RequestBody @Valid PetDTO petDTO){
+        return ResponseEntity.ok(petService.atualizar(id, petDTO));
+    }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deletePet(@PathVariable Long id){
+        petService.deletar(id);
+        return ResponseEntity.noContent().build();
+    }
 
 }
